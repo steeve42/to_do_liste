@@ -1,0 +1,153 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+.app {
+  max-width: 480px;
+  margin: 60px auto;
+  padding: 32px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+h1 {
+  color: #4c1d95;
+  margin-bottom: 24px;
+  font-size: 1.8rem;
+}
+
+/* --- Formulaire --- */
+.todo-form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.todo-form input {
+  flex: 1;
+  padding: 12px 14px;
+  font-size: 1rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.todo-form input:focus {
+  border-color: #764ba2;
+}
+
+.todo-form button {
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.todo-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(118, 75, 162, 0.4);
+}
+
+.todo-form button:active {
+  transform: translateY(0);
+}
+
+/* --- Liste --- */
+.todo-list {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 14px;
+  background: #f9fafb;
+  border-radius: 10px;
+  border: 1px solid #f0f0f0;
+  animation: fadeIn 0.25s ease;
+  transition: background 0.15s ease;
+}
+
+.todo-item:hover {
+  background: #f3f0ff;
+}
+
+.todo-item span {
+  cursor: pointer;
+  flex: 1;
+  font-size: 1rem;
+  color: #1f2937;
+  transition: color 0.2s ease;
+}
+
+.todo-item.completed {
+  background: #f0fdf4;
+}
+
+.todo-item.completed span {
+  text-decoration: line-through;
+  color: #9ca3af;
+}
+
+.todo-item button {
+  background: #fee2e2;
+  color: #dc2626;
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.todo-item button:hover {
+  background: #fca5a5;
+  color: white;
+  transform: scale(1.1);
+}
+
+.empty {
+  color: #9ca3af;
+  font-style: italic;
+  padding: 20px 0;
+}
+
+.counter {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
